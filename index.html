@@ -63,29 +63,29 @@ body{
 .image-wrap img{
     max-width:100%;
 }
-/* 权属表格 精准复刻原图列宽、布局 */
+/* 权属表格 */
 .info-table{
     width:100%;
     border-collapse: collapse;
     font-size:17px;
 }
 .info-table td{
-    padding:18px 12px;
+    padding:12px 12px;  /* 垂直内边距压缩，缩小行高 */
     vertical-align: middle;
     border: 1px solid #f0f2f8;
 }
-/* 第一列：大分类【房屋状况/证书是否有效/土地状况】加宽 */
+/* 第一列：大分类【房屋状况/证书是否有效/土地状况】 */
 .info-table td.col-category{
     width: 160px;
     text-align:right;
     font-weight:500;
 }
-/* 标签列：权证号、权利人等 */
+/* 标签列 */
 .info-table td.col-label{
     width: 140px;
     text-align:right;
 }
-/* 内容单元格：文字居中 */
+/* 内容单元格 */
 .info-table td.col-val{
     text-align:center;
 }
@@ -104,16 +104,16 @@ body{
         <!-- 分户图面板 -->
         <div class="tab-panel">
             <div class="image-wrap">
-                <img src="images/fenhu.png" alt="分户图">
+                <img src="1.jpg" alt="分户图">
             </div>
         </div>
         <!-- 宗地图面板 -->
         <div class="tab-panel">
             <div class="image-wrap">
-                <img src="images/zongdi.png" alt="宗地图">
+                <img src="2.jpg" alt="宗地图">
             </div>
         </div>
-        <!-- 权属状态表格【完全匹配截图行列合并与宽度】 -->
+        <!-- 权属状态表格 -->
         <div class="tab-panel">
             <table class="info-table">
                 <tr>
@@ -186,10 +186,10 @@ tabs.forEach(tab=>{
     })
 })
 
-// 触屏左右滑动支持
+// 触屏左右滑动支持，默认打开分户图
 let startX = 0;
 let moveX = 0;
-let currentIndex = 0;  // ✅ 修改这里：0=分户图，1=宗地图，2=权属状态
+let currentIndex = 0;
 const panelWrap = document.querySelector('.tab-wrap');
 panelWrap.addEventListener('touchstart',e=>{
     startX = e.touches[0].clientX;
